@@ -5,12 +5,15 @@ import { lusitana } from '@/app/ui/fonts';
 import { Suspense } from 'react';
 import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 import { Metadata } from 'next';
+import { unstable_noStore } from 'next/cache';
  
 export const metadata: Metadata = {
   title: 'Dashboard',
 };
 
 export default async function Page() {
+
+  unstable_noStore();
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
